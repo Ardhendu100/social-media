@@ -9,30 +9,30 @@ This file will track your progress and explain each step in simple terms. Mark e
 - [x] Set up a Git repository (optional, for version control)
 
 ## 2. Create the First Service: API Gateway
-- [x] Create a folder `api-gateway`
-- [ ] Initialize a Django project inside `api-gateway`
-- [ ] Add a `requirements.txt` with Django listed
-- [ ] Create a `Dockerfile` for the service
-- [ ] Write a simple README in `api-gateway` explaining what it does
+ [x] Create a folder `api-gateway`
+ [x] Initialize a Django project inside `api-gateway`
+ [x] Add a `requirements.txt` with Django listed
+ [x] Create a `Dockerfile` for the service
+ [x] Write a simple README in `api-gateway` explaining what it does
 
 ## 3. Run API Gateway Locally
-- [ ] Install Django locally (for scaffolding only)
-- [ ] Run the Django development server and access the welcome page
-- [ ] Understand the purpose of each file Django creates
+ [x] Install Django locally (for scaffolding only)
+ [x] Run the Django development server and access the welcome page
+ [x] Understand the purpose of each file Django creates
 
 ## 4. Dockerize API Gateway
-- [ ] Write a Dockerfile to containerize the Django app
-- [ ] Build and run the container
-- [ ] Access Django via Docker
+- [x] Write a Dockerfile to containerize the Django app
+- [x] Build and run the container
+- [x] Access Django via Docker
 
 ## 5. Add User Service (Repeat Steps 2–4)
-- [ ] Create `user-service` folder
-- [ ] Initialize Django project, requirements, Dockerfile, README
-- [ ] Run locally, then Dockerize
+- [x] Create `user-service` folder
+- [x] Initialize Django project, requirements, Dockerfile, README
+- [x] Run locally, then Dockerize
 
 ## 6. Set Up Docker Compose
-- [ ] Write a `docker-compose.yml` to run both services together
-- [ ] Test communication between services
+- [x] Write a `docker-compose.yml` to run both services together
+- [x] Test communication between services
 
 ## 7. Add Database (PostgreSQL)
 - [ ] Add PostgreSQL to Docker Compose
