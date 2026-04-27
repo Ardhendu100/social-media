@@ -35,9 +35,9 @@ This file will track your progress and explain each step in simple terms. Mark e
 - [x] Test communication between services
 
 ## 7. Add Database (PostgreSQL)
-- [ ] Add PostgreSQL to Docker Compose
-- [ ] Configure Django to use PostgreSQL
-- [ ] Run migrations
+- [x] Add PostgreSQL to Docker Compose
+- [x] Configure Django to use PostgreSQL
+- [x] Run migrations
 
 ## 8. Add More Services (Posts, Feed, etc.)
 - [ ] Repeat the above steps for each new service
