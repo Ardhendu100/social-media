@@ -9,7 +9,7 @@ This file will track your progress and explain each step in simple terms. Mark e
 - [x] Set up a Git repository (optional, for version control)
 
 ## 2. Create the First Service: API Gateway
-- [ ] Create a folder `api-gateway`
+- [x] Create a folder `api-gateway`
 - [ ] Initialize a Django project inside `api-gateway`
 - [ ] Add a `requirements.txt` with Django listed
 - [ ] Create a `Dockerfile` for the service
