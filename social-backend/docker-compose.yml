@@ -25,6 +25,18 @@ services:
     depends_on:
       - postgres
 
+  post-service:
+    build: ./post-service
+    ports:
+      - "8002:8002"
+    environment:
+      - DJANGO_DB_HOST=postgres
+      - DJANGO_DB_NAME=social
+      - DJANGO_DB_USER=social
+      - DJANGO_DB_PASSWORD=socialpass
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:15
     environment:

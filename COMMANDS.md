@@ -24,6 +24,11 @@ To run only api-gateway:
 sudo docker compose up --build api-gateway
 ```
 
+To run only post-service with datbase:
+```bash
+sudo docker compose up --build post-service postgres
+```
+
 You can also start a service in the background (detached mode):
 ```bash
 sudo docker compose up -d user-service
