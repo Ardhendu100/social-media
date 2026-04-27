@@ -5,8 +5,36 @@ services:
     build: ./api-gateway
     ports:
       - "8000:8000"
+    environment:
+      - DJANGO_DB_HOST=postgres
+      - DJANGO_DB_NAME=social
+      - DJANGO_DB_USER=social
+      - DJANGO_DB_PASSWORD=socialpass
+    depends_on:
+      - postgres
 
   user-service:
     build: ./user-service
     ports:
       - "8001:8001"
+    environment:
+      - DJANGO_DB_HOST=postgres
+      - DJANGO_DB_NAME=social
+      - DJANGO_DB_USER=social
+      - DJANGO_DB_PASSWORD=socialpass
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: social
+      POSTGRES_PASSWORD: socialpass
+      POSTGRES_DB: social
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

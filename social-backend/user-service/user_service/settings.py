@@ -72,10 +72,16 @@ WSGI_APPLICATION = 'user_service.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DJANGO_DB_NAME', 'social'),
+        'USER': os.environ.get('DJANGO_DB_USER', 'social'),
+        'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', 'socialpass'),
+        'HOST': os.environ.get('DJANGO_DB_HOST', 'localhost'),
+        'PORT': '5432',
     }
 }
 
