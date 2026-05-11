@@ -40,7 +40,7 @@ This file will track your progress and explain each step in simple terms. Mark e
 - [x] Run migrations
 
 ## 8. Add More Services (Posts, Feed, etc.)
-- [ ] Repeat the above steps for each new service
+- [x] Repeat the above steps for each new service
 
 ## 9. Add Redis, Elasticsearch, NGINX, etc.
 - [ ] Add each infrastructure component one by one

@@ -34,7 +34,15 @@ You can also start a service in the background (detached mode):
 sudo docker compose up -d user-service
 ```
 You can clean up unused images, containers, and volumes with:
-sudo docker system prune
 
+```bash
+sudo docker system prune
+```
+
+To run migration
+
+```bash
+sudo docker compose exec feed-service python manage.py migrate
+```
 ---
 Add more commands as you add more services or infrastructure.
