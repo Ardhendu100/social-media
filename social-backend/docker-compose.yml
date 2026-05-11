@@ -38,6 +38,8 @@ services:
       - DJANGO_DB_PASSWORD=socialpass
     depends_on:
       - postgres
+    volumes:
+      - ./post-service:/app
 
   feed-service:
     build: ./feed-service
@@ -50,7 +52,8 @@ services:
       - DJANGO_DB_PASSWORD=socialpass
     depends_on:
       - postgres
-
+    volumes:
+      - ./feed-service:/app
   notification-service:
     build: ./notification-service
     ports:
@@ -62,6 +65,8 @@ services:
       - DJANGO_DB_PASSWORD=socialpass
     depends_on:
       - postgres
+    volumes:
+      - ./notification-service:/app
 
   search-service:
     build: ./search-service
@@ -74,6 +79,8 @@ services:
       - DJANGO_DB_PASSWORD=socialpass
     depends_on:
       - postgres
+    volumes:
+      - ./search-service:/app
 
   postgres:
     image: postgres:15

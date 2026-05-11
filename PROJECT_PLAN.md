@@ -49,7 +49,7 @@ This file will track your progress and explain each step in simple terms. Mark e
 - [ ] Add NGINX (as API gateway/reverse proxy)
 
 ## 10. Implement Features (Recommended Order)
-- [ ] User registration/login (user-service) **← Start here**
+- [x] User registration/login (user-service)
 - [ ] Posting, commenting, liking (post-service)
 - [ ] Feed generation (feed-service)
 - [ ] Notifications (notification-service)
