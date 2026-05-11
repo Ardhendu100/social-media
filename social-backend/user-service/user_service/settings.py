@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +82,7 @@ DATABASES = {
         'NAME': os.environ.get('DJANGO_DB_NAME', 'social'),
         'USER': os.environ.get('DJANGO_DB_USER', 'social'),
         'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', 'socialpass'),
-        'HOST': os.environ.get('DJANGO_DB_HOST', 'localhost'),
+        'HOST': os.environ.get('DJANGO_DB_HOST', 'postgres'),
         'PORT': '5432',
     }
 }
@@ -121,3 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}

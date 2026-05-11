@@ -42,15 +42,20 @@ This file will track your progress and explain each step in simple terms. Mark e
 ## 8. Add More Services (Posts, Feed, etc.)
 - [x] Repeat the above steps for each new service
 
-## 9. Add Redis, Elasticsearch, NGINX, etc.
-- [ ] Add each infrastructure component one by one
 
-## 10. Implement Features
-- [ ] User registration/login
-- [ ] Posting, commenting, liking
-- [ ] Feed generation
-- [ ] Notifications
-- [ ] Search
+## 9. Add Infrastructure Components
+- [ ] Add Redis (for caching, feed, notifications)
+- [ ] Add Elasticsearch (for search)
+- [ ] Add NGINX (as API gateway/reverse proxy)
+
+## 10. Implement Features (Recommended Order)
+- [ ] User registration/login (user-service) **← Start here**
+- [ ] Posting, commenting, liking (post-service)
+- [ ] Feed generation (feed-service)
+- [ ] Notifications (notification-service)
+- [ ] Search (search-service)
+
+> Tip: Start with user registration/login, then move to posting, then feed, notifications, and search. Complete and test each feature before moving to the next.
 
 ## 11. Observability & Monitoring
 - [ ] Add Prometheus and Grafana

@@ -24,6 +24,8 @@ services:
       - DJANGO_DB_PASSWORD=socialpass
     depends_on:
       - postgres
+    volumes:
+      - ./user-service:/app
 
   post-service:
     build: ./post-service
