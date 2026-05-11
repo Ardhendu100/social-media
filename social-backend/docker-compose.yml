@@ -37,6 +37,42 @@ services:
     depends_on:
       - postgres
 
+  feed-service:
+    build: ./feed-service
+    ports:
+      - "8003:8003"
+    environment:
+      - DJANGO_DB_HOST=postgres
+      - DJANGO_DB_NAME=social
+      - DJANGO_DB_USER=social
+      - DJANGO_DB_PASSWORD=socialpass
+    depends_on:
+      - postgres
+
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "8004:8004"
+    environment:
+      - DJANGO_DB_HOST=postgres
+      - DJANGO_DB_NAME=social
+      - DJANGO_DB_USER=social
+      - DJANGO_DB_PASSWORD=socialpass
+    depends_on:
+      - postgres
+
+  search-service:
+    build: ./search-service
+    ports:
+      - "8005:8005"
+    environment:
+      - DJANGO_DB_HOST=postgres
+      - DJANGO_DB_NAME=social
+      - DJANGO_DB_USER=social
+      - DJANGO_DB_PASSWORD=socialpass
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:15
     environment:
