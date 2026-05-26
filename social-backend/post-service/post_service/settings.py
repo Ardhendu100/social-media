@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'rest_framework',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,12 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+# JWT token lifetime settings
+from datetime import timedelta
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # Change as needed
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
+
+APPEND_SLASH = True
