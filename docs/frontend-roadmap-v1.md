@@ -15,7 +15,7 @@ Enterprise-grade React + Vite frontend for the distributed social media platform
 
 ---
 
-## Phase 0 — Foundations (Week 1–2)
+## Phase 0 — Foundations (Week 1–2) ✅ Completed
 **Goals**
 - Establish architecture scaffold, baseline tooling, and governance.
 
@@ -37,7 +37,7 @@ Enterprise-grade React + Vite frontend for the distributed social media platform
 
 ---
 
-## Phase 1 — Auth & Session (Week 2–3)
+## Phase 1 — Auth & Session (Week 2–3) 🚧 In Progress
 **Goals**
 - Secure login, signup, refresh flow, and routing guards.
 
