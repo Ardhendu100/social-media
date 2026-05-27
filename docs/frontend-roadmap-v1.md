@@ -58,6 +58,15 @@ Enterprise-grade React + Vite frontend for the distributed social media platform
 **Technical debt warnings**
 - Avoid storing access tokens in localStorage in production.
 
+### Current Status (as of 2026-05-27)
+- ✅ Auth domain scaffolded (`src/domains/auth/*`).
+- ✅ Login + register UI wired to backend with Axios client.
+- ✅ Route guards in place (`AuthGuard`, `PublicRoute`).
+- ✅ Token refresh interceptor and refresh flow present.
+- ✅ Auth store with Zustand and session restore on app boot.
+- ✅ Access tokens now stored in memory only; refresh token in httpOnly cookie (secure, production-ready).
+- ✅ Global error boundary and friendly error banner implemented.
+
 ---
 
 ## Phase 2 — Core Feed & Post (Week 3–5)
@@ -80,6 +89,11 @@ Enterprise-grade React + Vite frontend for the distributed social media platform
 
 **Technical debt warnings**
 - Must avoid over-fetching; keep feed lightweight.
+
+### Current Status (as of 2026-05-27)
+- ✅ Feed page scaffolded with placeholder UI.
+- ❌ No feed API integration yet.
+- ❌ No post creation flow yet.
 
 ---
 
@@ -166,6 +180,18 @@ Enterprise-grade React + Vite frontend for the distributed social media platform
 
 **Technical debt warnings**
 - Do not skip performance regressions; enforce budgets.
+
+### Current Status (as of 2026-05-27)
+- ❌ Error boundaries not yet implemented.
+- ❌ No performance budgets or CI checks yet.
+
+---
+
+## Next Steps (Immediate)
+1. ✅ Add a lightweight backend health check endpoint and call it on app boot to surface global errors.
+2. ✅ Implement a global error boundary + friendly fallback screen.
+3. ✅ Move access tokens to in-memory storage with refresh token in httpOnly cookie (secure, production-ready).
+4. ⏭️ Start Phase 2: integrate feed API and build first “create post” flow.
 
 ---
 

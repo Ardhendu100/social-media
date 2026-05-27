@@ -1,22 +1,17 @@
 import axios from 'axios'
 import { env } from '../../config/env'
-import { clearTokens, getRefreshToken, setTokens } from './tokenStorage'
+import { clearTokens, setTokens } from './tokenStorage'
 
 export const refreshTokens = async () => {
-  const refresh = getRefreshToken()
-  if (!refresh) {
-    clearTokens()
-    return null
-  }
-
   try {
-    const response = await axios.post(`${env.USER_SERVICE_URL}/accounts/token/refresh/`, {
-      refresh,
-    })
+    const response = await axios.post(
+      `${env.USER_SERVICE_URL}/accounts/token/refresh/`,
+      {},
+      { withCredentials: true },
+    )
 
     const tokens = {
       access: response.data.access,
-      refresh,
     }
 
     setTokens(tokens)

@@ -6,19 +6,26 @@ import { clearTokens, getTokens, setTokens } from '../../../infra/auth/tokenStor
 const initialState = {
   user: null,
   accessToken: null,
-  refreshToken: null,
   status: 'idle',
   error: null,
 }
 
 export const useAuthStore = create((set, get) => ({
   ...initialState,
-  initialize: () => {
+  initialize: async () => {
     const tokens = getTokens()
     if (tokens?.access) {
       set({
         accessToken: tokens.access,
-        refreshToken: tokens.refresh,
+        status: 'authenticated',
+      })
+      return
+    }
+
+    const refreshed = await refreshTokens()
+    if (refreshed?.access) {
+      set({
+        accessToken: refreshed.access,
         status: 'authenticated',
       })
     }
@@ -27,10 +34,9 @@ export const useAuthStore = create((set, get) => ({
     set({ status: 'loading', error: null })
     try {
       const data = await loginUser({ username, password })
-      setTokens({ access: data.access, refresh: data.refresh })
+      setTokens({ access: data.access })
       set({
         accessToken: data.access,
-        refreshToken: data.refresh,
         user: { username },
         status: 'authenticated',
       })
